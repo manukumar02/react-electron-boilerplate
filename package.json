@@ -7,11 +7,31 @@
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4"
   },
+  "devDependencies": {
+    "electron": "^3.0.3",
+    "electron-builder": "^20.28.4",
+    "foreman": "^3.0.1"
+  },
   "scripts": {
+    "dev": "nf start",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "ebuild": "yarn build && node_modules/.bin/build"
+  },
+  "description": "React and Electron Awesome App",
+  "homepage": "./",
+  "main": "electron/main.js",
+  "build": {
+    "productName": "React Electron App",
+    "appId": "mks_1.0.0",
+    "electronVersion": "3.0.0",
+    "files": [
+      "build/**/*",
+      "electron/*"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
